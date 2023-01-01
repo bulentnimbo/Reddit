@@ -7,30 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-      <% flash.each do |name , msg| %>
-        <%= content_tag(:div, msg, class: "allert alert-#{name}")%>
-      <% end %>
-
-      <% if user_signed_in? %>
-      <ul>
-        <li><%= current_user.email %></li>
-        <li><%= link_to "Submit link", new_link_path %></li>
-        <li><%= link_to "Account", edit_user_registration_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %></li>
-        
-      </ul>
-      <% else %>
-        <ul>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Sign In", new_user_session_path %></li>
-        </ul>
-      <% end %>
-
-
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/flash" %>
     <%= yield %>
   </body>
 </html>

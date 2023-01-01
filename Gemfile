@@ -10,6 +10,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

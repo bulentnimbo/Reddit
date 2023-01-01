@@ -11,6 +11,8 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'acts_as_votable'
+gem 'simple_form', '~> 5.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
